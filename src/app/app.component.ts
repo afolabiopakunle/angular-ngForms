@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent implements OnInit {
 
   @ViewChild('form') form: NgForm;
+  secretQuestion = '';
   constructor() { }
 
   ngOnInit() {
