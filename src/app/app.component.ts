@@ -32,10 +32,19 @@ export class AppComponent implements OnInit {
 
   suggestUsername() {
     const userName = 'Supername';
+    this.form.setValue({
+        "userData": {
+            "user-name": "Afolabi Opakunle",
+            "email": "opakunleafolabi@gmail.com",
+        },
+        "secret": "pet",
+        "secretQuestion": "Software engineer now",
+        "gender": 1,
+    })
   }
 
   onSubmit() {
-    console.log(this.form);
+    console.log(this.form.value);
   }
 
 }
