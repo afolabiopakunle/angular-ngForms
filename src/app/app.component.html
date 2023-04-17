@@ -44,7 +44,7 @@
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
-          <div class="help-block text-danger">
+          <div class="help-block text-danger" *ngIf="secret.invalid && secret.touched">
             Please enter a secret
           </div>
         </div>
@@ -52,6 +52,17 @@
           <textarea [(ngModel)]='secretQuestion' name='secreQuestion' row='1' class="form-control"></textarea>
         </div> 
         <p>Your secret question is: <strong>{{ secretQuestion }}</strong></p>
+        <div class="radio" *ngFor="let gender of genders; let i = index">
+          <label [attr.for]="'gender-' + i">
+            <input 
+            type="radio"
+            name='gender'
+            id="gender-{{i}}"
+            ngModel
+            [value]='gender.value'
+            > {{gender.title}}
+          </label>
+        </div>
         <button [disabled]='form.invalid' class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>

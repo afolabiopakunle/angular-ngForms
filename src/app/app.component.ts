@@ -10,6 +10,21 @@ export class AppComponent implements OnInit {
 
   @ViewChild('form') form: NgForm;
   secretQuestion = '';
+  genders = [
+    { 
+      value: 1,
+      title: 'Male',
+    }, 
+    {
+      value: 2,
+      title: 'Female',
+    },
+    {
+      value: 3,
+      title: 'Undisclosed',
+    }
+  ]
+
   constructor() { }
 
   ngOnInit() {
