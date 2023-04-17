@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,9 @@ export class AppComponent implements OnInit {
   suggestUsername() {
     const userName = 'Supername';
   }
+
+  onSubmit(form: NgForm) {
+    console.log(form.value)
+  }
+
 }
